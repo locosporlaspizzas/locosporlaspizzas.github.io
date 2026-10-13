@@ -1,0 +1,29 @@
+{
+  "publicar": true,
+  "pizzeria": "Cucci",
+  "zona": "La plata",
+  "direccion": "La plata",
+  "fecha": "2026-10-13",
+  "estilo": "Napolitana",
+  "horno": "Leña",
+  "pedido": "Pizza",
+  "precio": 20000,
+  "ubicacion": "{\"type\":\"Point\",\"coordinates\":[-58.383021,-34.605841]}",
+  "medios": [],
+  "ficha": {
+    "masa": 1,
+    "masa_obs": "",
+    "coccion": 1,
+    "coccion_obs": "",
+    "salsa": 1,
+    "salsa_obs": "",
+    "queso": 1,
+    "queso_obs": "",
+    "ingredientes": 1,
+    "ingredientes_obs": "",
+    "precio": 1,
+    "precio_obs": "Cuggj"
+  },
+  "texto": "Hdjfhdhdufhdhf",
+  "veredicto": "Aprovecha"
+}
