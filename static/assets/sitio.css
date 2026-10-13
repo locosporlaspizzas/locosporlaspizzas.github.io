@@ -1,0 +1,21 @@
+/* Marco general de la web: fondo lino, encabezado claro con doble línea. */
+:root{--lino:#EDE6DA;--papel:#F8F4EC;--tinta:#1B1A19;--gris:#5B6474;--celeste:#74ACDF;color-scheme:light}
+*{box-sizing:border-box}
+html,body{margin:0}
+body{background:var(--lino);color:var(--tinta);font-family:'IBM Plex Sans',system-ui,sans-serif;font-size:16px;line-height:1.5}
+img{max-width:100%}
+a{color:var(--tinta)}
+.sitio-ancho{max-width:980px;margin:0 auto;padding-inline:16px}
+.sitio-cab{position:sticky;top:0;z-index:1000;background:var(--papel);border-bottom:3px double var(--tinta)}
+.sitio-cab .sitio-ancho{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;padding-block:6px}
+.sitio-logo img{display:block;height:56px;width:auto}
+.sitio-cab nav{display:flex;gap:4px;flex-wrap:wrap}
+.sitio-cab nav a{color:var(--gris);text-decoration:none;padding:8px 10px;font-size:15px;font-weight:500}
+.sitio-cab nav a[aria-current="page"]{color:var(--tinta);text-decoration:underline;text-decoration-color:var(--celeste);text-decoration-thickness:3px;text-underline-offset:6px}
+main.sitio-ancho{padding-block:16px 40px}
+.sitio-h1{font-family:'Libre Baskerville',Georgia,serif;font-weight:700;font-size:clamp(26px,6.5vw,36px);line-height:1.2;margin:4px 0 6px;text-wrap:balance}
+.sitio-volver{margin:24px 0 0}
+.sitio-pie{border-top:1px solid #DDD3C4;color:var(--gris);font-size:13px}
+.sitio-pie .sitio-ancho{padding-block:20px}
+.sitio-oculto{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.pf-resena{max-width:680px;margin:0 auto}

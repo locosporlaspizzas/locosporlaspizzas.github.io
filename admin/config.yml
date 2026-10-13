@@ -1,0 +1,76 @@
+# Panel privado de Locos por las pizzas (Sveltia CMS).
+# Solo pueden entrar las cuentas de GitHub con permiso sobre este repositorio.
+backend:
+  name: github
+  repo: locosporlaspizzas/locosporlaspizzas.github.io
+  branch: main
+  commit_messages:
+    create: "Nueva reseña: {{slug}}"
+    update: "Reseña actualizada: {{slug}}"
+    delete: "Reseña borrada: {{slug}}"
+    uploadMedia: "Foto o video: {{path}}"
+    deleteMedia: "Borrado: {{path}}"
+
+media_folder: media
+public_folder: /media
+
+collections:
+  - name: resenas
+    label: Reseñas
+    label_singular: Reseña
+    folder: content/resenas
+    create: true
+    delete: true
+    format: json
+    extension: json
+    identifier_field: pizzeria
+    slug: "{{fecha}}-{{pizzeria}}"
+    summary: "{{pizzeria}} · {{fecha}}"
+    sortable_fields: [fecha, pizzeria]
+    fields:
+      - { name: publicar, label: "Publicar en la web", widget: boolean, default: true, hint: "Apagalo para guardarla como borrador." }
+      - { name: pizzeria, label: "Pizzería", widget: string }
+      - { name: zona, label: "Barrio", widget: string, required: false }
+      - { name: direccion, label: "Dirección", widget: string, required: false }
+      - { name: fecha, label: "Fecha de la visita", widget: datetime, time_format: false, format: "YYYY-MM-DD" }
+      - name: estilo
+        label: Estilo
+        widget: select
+        options: ["A la piedra", "Al molde", "Media masa", "Napolitana", "Al corte / al metro", "Canchera", "Otro"]
+      - name: horno
+        label: Horno
+        widget: select
+        required: false
+        options: ["Leña", "Piedra a gas", "Eléctrico", "Chapa / pizzera", "No se sabe"]
+      - { name: pedido, label: "Qué pidieron", widget: string, required: false }
+      - { name: precio, label: "Precio pagado (ARS)", widget: number, value_type: int, required: false, min: 0 }
+      - name: ubicacion
+        label: "Dónde está"
+        hint: "Tocá el botón de ubicación si están en la pizzería, o buscá la dirección."
+        widget: map
+        center: [-58.3816, -34.6037]
+        zoom: 12
+        decimals: 6
+      - name: medios
+        label: "Fotos y videos (la primera es la portada)"
+        widget: list
+        required: false
+        field: { name: archivo, label: "Foto o video", widget: file }
+      - name: ficha
+        label: "Ficha del chef (notas del 1 al 10)"
+        widget: object
+        fields:
+          - { name: masa, label: "Masa", widget: number, value_type: float, min: 1, max: 10, step: 0.5 }
+          - { name: masa_obs, label: "Masa · comentario", widget: string, required: false }
+          - { name: coccion, label: "Cocción y base", widget: number, value_type: float, min: 1, max: 10, step: 0.5 }
+          - { name: coccion_obs, label: "Cocción · comentario", widget: string, required: false }
+          - { name: salsa, label: "Salsa", widget: number, value_type: float, min: 1, max: 10, step: 0.5 }
+          - { name: salsa_obs, label: "Salsa · comentario", widget: string, required: false }
+          - { name: queso, label: "Queso", widget: number, value_type: float, min: 1, max: 10, step: 0.5 }
+          - { name: queso_obs, label: "Queso · comentario", widget: string, required: false }
+          - { name: ingredientes, label: "Ingredientes", widget: number, value_type: float, min: 1, max: 10, step: 0.5 }
+          - { name: ingredientes_obs, label: "Ingredientes · comentario", widget: string, required: false }
+          - { name: precio, label: "Precio / calidad", widget: number, value_type: float, min: 1, max: 10, step: 0.5 }
+          - { name: precio_obs, label: "Precio · comentario", widget: string, required: false }
+      - { name: texto, label: "La reseña", widget: markdown, hint: "Describí lo que probaron en esta visita. Nada de acusaciones: opiniones técnicas." }
+      - { name: veredicto, label: "Veredicto en una línea", widget: string }
