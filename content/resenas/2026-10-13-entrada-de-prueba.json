@@ -1,0 +1,31 @@
+{
+  "publicar": true,
+  "pizzeria": "Entrada de prueba",
+  "zona": "prueba",
+  "direccion": "prueba",
+  "fecha": "2026-10-13",
+  "estilo": "Napolitana",
+  "horno": "Chapa / pizzera",
+  "pedido": "prueba",
+  "precio": 36000,
+  "ubicacion": "{\"type\":\"Point\",\"coordinates\":[-57.969489,-34.921508]}",
+  "medios": [
+    "/media/5V54S7SN3NDWTNWALVZPMN5WKA.jpg"
+  ],
+  "ficha": {
+    "masa": 9,
+    "masa_obs": "bien",
+    "coccion": 5,
+    "coccion_obs": "medio",
+    "salsa": 4,
+    "salsa_obs": "acido",
+    "queso": 4,
+    "queso_obs": "mala calidad",
+    "ingredientes": 6,
+    "ingredientes_obs": "normales",
+    "precio": 5,
+    "precio_obs": "gastamos 36000"
+  },
+  "texto": "Nota de prueba",
+  "veredicto": "Normal"
+}
